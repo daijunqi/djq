@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="js/jquery.js" ></script>
+</head>
+<body>
+<form method="post" id="form" action="/ccc">
+    <input name="1" value="1" />
+    <input name="1" value="2" />
+    <input name="1" value="4" />
+    <input name="1" value="5" />
+    <input type="submit" value="submit" />
+</form>
+123123
+<input type="button" value="aaa" onclick="aa()">
+<input type="button" value="ttt" onclick="bb()">
+
+<script type="text/javascript">
+    var aa = function() {
+        $.ajax({
+            type: "post",
+            url: "/aaa",
+            data: $("#form").serialize(),
+            success: function (result) {
+                alert(result)
+            }
+        });
+    }
+
+    var bb = function() {
+        $.ajax({
+            type: "post",
+            url: "/ttt",
+            data: $("#form").serialize(),
+            success: function (result) {
+                alert(result)
+            }
+        });
+    }
+</script>
+</body>
+</html>
